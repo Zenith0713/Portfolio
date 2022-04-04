@@ -1,0 +1,620 @@
+/******************************************************************************/
+/********************************** Global ************************************/
+/******************************************************************************/
+
+/* *,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+html {
+  font-family: "Nunito";
+}
+
+body {
+  background-color: #1e1e23;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.myBorder  {
+  padding: 1rem;
+}
+
+.myBorder, .fa-ul li, form .submitButton {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  text-align: center;
+  font-family: "Dancing Script";
+}
+
+main h1 {
+  font-size: 2.5rem;
+  margin: 3rem 0;
+}
+
+/* Paragraphe */
+
+p,
+section li {
+  color: #fff;
+  line-height: 25px;
+  text-align: justify;
+}
+
+p {
+  max-width: 500px;
+  opacity: 0;
+}
+
+/******************************************************************************/
+/*********************************** Home *************************************/
+/******************************************************************************/
+
+/**** Welcome ****/
+.welcome {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: #1e1e23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.heading {
+  font-family: "Dancing Script";
+  font-size: 50px;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.sub-heading {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: "Nunito";
+  margin-bottom: 40px;
+  color: #808080;
+  opacity: 0;
+}
+
+.loader-wrapper {
+  height: 2px;
+  width: 150px;
+  background-color: #ededed;
+  border-radius: 100px;
+  opacity: 0;
+}
+
+.loader {
+  height: 2px;
+  width: 150px;
+  background-color: #626262;
+  border-radius: 100px;
+}
+
+/**** Social Icons ****/
+
+.icons {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  position: fixed;
+  z-index: 100;
+}
+
+.icons ul {
+  padding: initial;
+}
+
+.icons ul li {
+  height: 40px;
+  width: 40px;
+  list-style-type: none;
+  padding-top: 6px;
+  margin-bottom: 0.3rem;
+  color: #fff;
+  background: #000;
+}
+
+.icons i {
+  margin-top: 0.5rem;
+}
+
+.icons .linkedIn {
+  background: #007bb5;
+}
+
+.icons .github {
+  background: #171515;
+}
+
+.icons .resume {
+  color: black;
+  background: #fff;
+}
+
+.icons ul li:hover {
+  width: 5rem;
+  transition: 1s;
+}
+
+/**** Main content ****/
+
+/**** Biography ****/
+
+#biography > div, #skills > div, #project > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#biography article:first-of-type {
+  width: 30%;
+  padding: 2rem 0 0 7rem;
+}
+
+article .fa-ul {
+  margin-left: 0;
+}
+
+.fa-ul li {
+  padding-left: 36%;
+  line-height: 3rem;
+}
+
+.fa-ul li i {
+  width: 2rem;
+}
+
+#biography article:nth-of-type(2) {
+  width: 40%;
+}
+
+#biography article:nth-of-type(2) img {
+  width: 100%;
+  height: auto;
+}
+
+/**** Timeline ****/
+
+.box-timeline {
+  width: 100%;
+  position: relative;
+  padding: 80px 0 250px 0;
+  margin-bottom: 100px;
+}
+
+.ligne {
+  height: 1000px;
+  width: 8px;
+  margin: 0 auto;
+  background: #333;
+}
+
+.rond {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #333;
+  position: absolute;
+  border: 1px solid #000;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.r1 {
+  top: 80px;
+}
+
+.r2 {
+  top: 386px;
+}
+
+.r3 {
+  top: 692px;
+}
+
+.r4 {
+  top: 1000px;
+}
+
+.box {
+  color: #f1f1f1;
+  width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  border-radius: 3rem;
+  height: auto;
+  background: #333;
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.b1 {
+  top: 80px;
+  left: calc(50% - 300px);
+}
+
+.b2 {
+  top: 386px;
+  left: calc(50% + 300px);
+}
+
+.b3 {
+  top: 692px;
+  left: calc(50% - 300px);
+}
+
+.b4 {
+  top: 1000px;
+  left: calc(50% + 300px);
+}
+
+.box p {
+  line-height: 20px;
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+}
+
+/**** Project ****/
+
+#project {
+  margin-bottom: 10rem;
+ }
+
+#project h1 {
+ margin-bottom: 6rem;
+}
+
+#project article {
+  width: 49.5%;
+}
+
+#project a {
+  color: #fff;
+}
+
+#project img {
+  margin-bottom: 2rem;
+  width: 90%;
+}
+
+#project article p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#project div p:first-child {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/**** Contact ****/
+
+#contact .fa-ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#contact .fa-ul li{
+  display: inline-block;
+  padding-left: 10%;
+  width: 20%;
+}
+
+/**** Form ****/
+
+.form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form fieldset {
+  width: 30%;
+  border: none;
+}
+
+.form fieldset:first-of-type {
+  margin-top: 1.8rem;
+}
+
+.form_group {
+  width: 100%;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.form_label {
+  position: absolute;
+  color: #fff;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all .3s;
+}
+
+.form_input {
+  font-size: 16px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: none;
+  border-bottom: 4px solid transparent;
+  width: 100%;
+  transition: all .3;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+fieldset:first-of-type .form_input {
+  height: 1.5rem;
+}
+
+.form_input:focus{
+  display: block;
+  outline: none;
+  border-bottom: 4px solid #2FE94A;
+  width: 66.6666%;
+}
+
+.form_input:focus:invalid {
+  border-bottom: 4px solid #E94A2F;
+}
+
+.form_input:focus + .form_label {
+ opacity: 1;
+ font-size: 20px;
+}
+
+.form_message {
+  text-align: left;
+}
+
+.form_message, .form_message .message_input {
+  width: 100%;
+}
+
+.form_message .message_input {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+.form_message-label {
+  display: block;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.submitButton {
+  display: block;
+  padding: 5px 30px;
+  border: none;
+  outline: none;
+  background-color: #1e1e23;
+  color: #fff;
+  text-shadow: 0 0 5px rgb(0,0,0);
+  font-size: 25px;
+  border-radius: 30px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.submitButton:hover{
+  transform: scale(1.02) translateY(-2px);
+}
+
+.submitButton:active{
+  transform: scale(0.98) translateY(1px);
+}
+
+
+/******************************************************************************/
+/**************************** Format Ordinateur *******************************/
+/******************************************************************************/
+
+/* Regarder combien est par rapport a la timeline */
+@media screen and (max-width: 1024px) {
+  /**** Main content ****/
+
+  /**** Biography ****/
+
+  #biography > div, #skills > div, #project > div {
+    flex-direction: column;
+  }
+
+  #biography article:first-of-type, #biography article:nth-of-type(2), #skills article:first-child > div, #contact article:first-child {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  #biography article:first-of-type {
+    padding: 0;
+  }
+
+  /*** Skills ***/
+
+  #skills article:first-child > div {
+    margin-bottom: 2rem;
+  }
+
+  #skills article:last-child > div {
+    margin-left: 20%;
+  }
+  
+  /**** Timeline ****/
+
+  .ligne {
+    position: relative;
+    height: 1050px;
+    left: 200px;
+  }
+
+  .r4, .b4 {
+    top: 1050px;
+  }
+
+  .rond {
+    left: calc(50% + 200px);
+  }
+
+  .box {
+    left: calc(50% - 85px);
+  }
+
+  /*** Project ***/
+
+  #project article {
+    margin: 0 auto;
+    width: inherit;
+  }
+
+  #project article:not(#project article:last-of-type) {
+      margin-bottom: 4rem;
+  }
+
+  #project img {
+    width: 80%;
+    margin: 0 auto 2rem;
+  }
+
+  /*** Contact ***/
+
+  #contact .fa-ul {
+    display: inherit;
+  }
+
+  #contact .fa-ul li {
+    display: inherit;
+    padding-left: 36%;
+    width: inherit;
+  }
+
+  
+}
+
+/******************************************************************************/
+/***************************** Format Tablette ********************************/
+/******************************************************************************/
+
+@media screen and (max-width: 768px) {
+  
+}
+
+/******************************************************************************/
+/****************************** Format Mobile *********************************/
+/******************************************************************************/
+
+@media screen and (max-width: 425px) {
+  .fa-ul li {
+    padding-left: 30%;
+  }
+
+  #biography article:first-of-type, #biography article:nth-of-type(2), #skills article:first-child > div, #contact article:first-child {
+    width: 80%;
+  }
+
+  #skills article:last-child > div {
+    margin-left: 15%;
+  }
+
+  #contact .fa-ul li {
+    padding-left: 20%;
+  }
+
+  /*** Form ***/
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form fieldset {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .form_group {
+    margin-bottom: 2rem;
+  }
+
+  .form_group:last-of-type {
+    margin-bottom: 1rem;
+  }
+  
+  /*** Timeline ***/
+  .ligne {
+    position: relative;
+    left: 160px;
+  }
+
+  .r1, .b1 {
+    top: 50px;
+  }
+
+  .r2, .b2 {
+    top: 363px;
+  }
+
+  .r3, .b3 {
+    top: 676px;
+  }
+
+  .r4, .b4 {
+    top: 1080px;
+  }
+
+  .rond {
+    width: 60px;
+    height: 60px;
+    left: calc(50% + 160px);
+    font-size: 30px;
+  }
+
+  .box {
+    width: 250px;
+    left: calc(50% - 25px);
+  }
+}
+
+/******************************************************************************/
+/******************************** Animation ***********************************/
+/******************************************************************************/
