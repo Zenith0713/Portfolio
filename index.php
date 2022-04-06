@@ -150,7 +150,7 @@
                     <img class="animatedElement" src="img/project-1.PNG" />
 
                     <div class="animatedElement">
-                        <p><a href="https://sylvienoelcoaching.com">sylvienoelcoaching.com</a></p>
+                        <p><a href="https://sylvienoelcoaching.com" target="_blank">sylvienoelcoaching.com</a></p>
                         <p>Premier site pour un particulier en tant que freelance, fait sur Wordpress.</p>
                     </div>
                 </article>
@@ -159,7 +159,7 @@
                     <img class="animatedElement" src="img/project-2.PNG" />
 
                     <div class="animatedElement">
-                        <p><a href="https://logiciel-code-barres.com">logiciel-code-barres.com</a></p>
+                        <p><a href="https://logiciel-code-barres.com" target="_blank">logiciel-code-barres.com</a></p>
                         <p>Premier site créé en tant que salarié chez Eticoncept, site fait sur Wordpress.</p>
                     </div>
                 </article>
@@ -178,10 +178,17 @@
                 </article>
 
                 <article>
-                    <form class="form">
+                    <div class="boxMessage validationMessage hide">
+                        <p>Mail envoyer avec succès, merci de m'avoir contacter.</p>
+                    </div>
+                    <div class="boxMessage errorMessage hide">
+                        <p>Impossible d'envoyer un mail. Veuillez réessayer.</p>
+                    </div>
+
+                    <form method="POST" action="php/contactForm.php" class="form">
                         <fieldset>
                             <div class="form_group">
-                                <input type="text" class="form_input" id="name" placeholder="Votre nom" required>
+                                <input type="text" class="form_input" name="name" id="name" placeholder="Votre nom" required>
                                 <label for="name" class="form_label">
                                     Votre nom
                                 </label>
@@ -189,14 +196,14 @@
 
 
                             <div class="form_group">
-                                <input type="email" class="form_input" id="email" placeholder="Votre email" required>
+                                <input type="email" class="form_input" name="email" id="email" placeholder="Votre email" required>
                                 <label for="company" class="form_label">
                                     Votre Email
                                 </label>
                             </div>
 
                             <div class="form_group">
-                                <input type="text" class="form_input" id="company" placeholder="Votre société (facultatif)">
+                                <input type="text" class="form_input" name="company" id="company" placeholder="Votre société (facultatif)">
                                 <label for="company" class="form_label">
                                     Votre société
                                 </label>

@@ -1,5 +1,3 @@
-import Slider from "../js/Slider.js";
-
 function animations() {
   // Wrapper animation
   anime
@@ -59,7 +57,7 @@ function animations() {
     delay: 2000,
     width: ["0%", "100%"],
     opacity: 1,
-    duration: 2300,
+    duration: 2400,
     easing: "easeOutExpo",
   });
 
@@ -69,7 +67,6 @@ function animations() {
     delay: (el, i) => 5200 + 100 * i,
     opacity: 1,
     duration: 2300,
-    translateY: ["-30px", "0px"],
     easing: "easeOutExpo",
     begin: function () {
       let sections = document.querySelectorAll("section");
@@ -81,13 +78,6 @@ function animations() {
     },
   });
 }
-
-// function sliderAnimation() {
-//   // ===== init ======
-//   let slider = new Slider({
-//     element: document.querySelector(".slider"),
-//   });
-// }
 
 function tagCloud() {
   const texts = [
@@ -108,8 +98,6 @@ function tagCloud() {
   } else if (screen.width < 1024) {
     radius = 200;
   }
-
-  console.log(screen.width);
 
   let tagCloud = TagCloud(".sphere", texts, {
     // Sphere radius in px
@@ -178,10 +166,68 @@ function timeLine() {
   });
 }
 
+function contactForm() {
+  const form = document.querySelector(".form");
+  const validationMessage = document.querySelector(".validationMessage");
+  const errorMessage = document.querySelector(".errorMessage");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    let elementTarget;
+
+    fetch("php/contactForm.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((error) => {
+        if (error) {
+          elementTarget = ".errorMessage";
+        } else {
+          elementTarget = ".validationMessage";
+        }
+
+        animeElement(elementTarget);
+      })
+      .catch((error) => {
+        elementTarget = ".errorMessage";
+        animeElement(elementTarget);
+        return console.error(error);
+      });
+  });
+}
+
+function animeElement(elementTarget) {
+  anime
+    .timeline({
+      targets: elementTarget,
+      easing: "easeOutExpo",
+    })
+    .add({
+      opacity: 1,
+      duration: 3000,
+      begin: function () {
+        let element = document.querySelector(elementTarget);
+        element.classList.remove("hide");
+        element.scrollIntoView();
+      },
+    })
+    .add({
+      delay: 3000,
+      opacity: 0,
+      duration: 1000,
+      complete: function () {
+        document.querySelector(elementTarget).classList.add("hide");
+      },
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   animations();
-  // sliderAnimation();
   tagCloud();
   scrollAnimation();
   timeLine();
+  contactForm();
 });
